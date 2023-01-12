@@ -4,8 +4,12 @@
   "description": "Multifactor authentication for kirby panel",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel watch src/index.js --no-source-maps -d ./",
-    "build": "parcel build src/index.js --no-source-maps --experimental-scope-hoisting -d ./"
+    "dev": "npx -y kirbyup src/index.js --watch",
+    "serve": "npx -y kirbyup serve src/index.js",
+    "build": "npx -y kirbyup src/index.js",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "format": "prettier --write src/components/*"
   },
   "keywords": [
     "kirby3",
@@ -23,10 +27,8 @@
     "vue-hot-reload-api": "^2.3.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.5.5",
-    "@vue/component-compiler-utils": "^3.0.0",
-    "cssnano": "^4.1.10",
-    "stylus": "^0.54.7",
-    "vue-template-compiler": "^2.6.10"
+    "eslint": "^8.30.0",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "^2.8.1"
   }
 }

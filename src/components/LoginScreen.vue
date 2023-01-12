@@ -1,6 +1,6 @@
 <template>
   <form class="k-login-form" @submit.prevent="login">
-    <h1 class="k-offscreen">{{ $t('login') }}</h1>
+    <h1 class="k-offscreen">{{ $t("login") }}</h1>
 
     <div v-if="issue" class="k-login-alert" @click="issue = null">
       <span>{{ issue }}</span>
@@ -17,7 +17,11 @@
       </div>
     </template>
     <template v-else>
-      <k-fieldset :novalidate="true" :fields="fields" v-model="user"></k-fieldset>
+      <k-fieldset
+        :novalidate="true"
+        :fields="fields"
+        v-model="user"
+      ></k-fieldset>
 
       <div class="k-login-buttons">
         <span class="k-login-checkbox">
@@ -47,9 +51,9 @@ export default {
       user: {
         email: "",
         password: "",
-        long: false
+        long: false,
       },
-      tfa_session_id: ""
+      tfa_session_id: "",
     };
   },
   computed: {
@@ -60,7 +64,7 @@ export default {
           label: this.$t("email"),
           type: "email",
           required: true,
-          link: false
+          link: false,
         },
         password: {
           label: this.$t("password"),
@@ -68,8 +72,8 @@ export default {
           minLength: 8,
           required: true,
           autocomplete: "current-password",
-          counter: false
-        }
+          counter: false,
+        },
       };
     },
     codeField() {
@@ -80,7 +84,7 @@ export default {
         maxLength: 6,
         counter: false,
       };
-    }
+    },
   },
   methods: {
     login() {
@@ -118,12 +122,12 @@ export default {
         .post("kirby-2fa/auth/code", {
           tfa_session_id: this.tfa_session_id,
           long: this.user.long,
-          code: this.code
+          code: this.code,
         })
         .then(({ code, status, user }) => {
           this.initialize(user);
         })
-        .catch(err => {
+        .catch((err) => {
           this.issue = err.message;
           this.isLoading = false;
         });
@@ -132,15 +136,15 @@ export default {
     initialize(user) {
       this.$store.dispatch("user/current", user);
       this.$store.dispatch("translation/activate", user.language, {
-        root: true
+        root: true,
       });
       this.$router.push(this.$store.state.path || "/");
       this.$store.dispatch("system/load", true).then(() => {
         this.$store.dispatch("notification/success", this.$t("welcome"));
         this.isLoading = false;
       });
-    }
-  }
+    },
+  },
 };
 </script>
 

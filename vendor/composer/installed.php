@@ -1,0 +1,41 @@
+<?php return array(
+    'root' => array(
+        'name' => 'graphicmarket/kirby-2fa',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'reference' => '9fadc37eb70c89b7e07ff059b4478208d8530918',
+        'type' => 'kirby-plugin',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => false,
+    ),
+    'versions' => array(
+        'getkirby/composer-installer' => array(
+            'pretty_version' => '1.2.1',
+            'version' => '1.2.1.0',
+            'reference' => 'c98ece30bfba45be7ce457e1102d1b169d922f3d',
+            'type' => 'composer-plugin',
+            'install_path' => __DIR__ . '/../getkirby/composer-installer',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'graphicmarket/kirby-2fa' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => '9fadc37eb70c89b7e07ff059b4478208d8530918',
+            'type' => 'kirby-plugin',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'robthree/twofactorauth' => array(
+            'pretty_version' => '1.8.2',
+            'version' => '1.8.2.0',
+            'reference' => '65681de5a324eae05140ac58b08648a60212afc0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../robthree/twofactorauth',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+    ),
+);

@@ -20,7 +20,10 @@
     "robthree/twofactorauth": "^1.7"
   },
   "config": {
-    "optimize-autoloader": true
+    "optimize-autoloader": true,
+    "allow-plugins": {
+      "getkirby/composer-installer": true
+    }
   },
   "autoload": {
     "psr-4": {

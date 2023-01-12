@@ -27,9 +27,6 @@
 # npm
 node_modules
 
-# parcel
-.cache
-
 # plugin
 db
 

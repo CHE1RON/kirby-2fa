@@ -8,24 +8,23 @@
     "packages": [
         {
             "name": "getkirby/composer-installer",
-            "version": "1.1.4",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/getkirby/composer-installer.git",
-                "reference": "2d6b8f5601a31caeeea45623e1643fbb437eb94e"
+                "reference": "c98ece30bfba45be7ce457e1102d1b169d922f3d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/getkirby/composer-installer/zipball/2d6b8f5601a31caeeea45623e1643fbb437eb94e",
-                "reference": "2d6b8f5601a31caeeea45623e1643fbb437eb94e",
+                "url": "https://api.github.com/repos/getkirby/composer-installer/zipball/c98ece30bfba45be7ce457e1102d1b169d922f3d",
+                "reference": "c98ece30bfba45be7ce457e1102d1b169d922f3d",
                 "shasum": ""
             },
             "require": {
-                "composer-plugin-api": "^1.0"
+                "composer-plugin-api": "^1.0 || ^2.0"
             },
             "require-dev": {
-                "composer/composer": "^1.8",
-                "phpunit/phpunit": "^7.0"
+                "composer/composer": "^1.8 || ^2.0"
             },
             "type": "composer-plugin",
             "extra": {
@@ -42,27 +41,42 @@
             ],
             "description": "Kirby's custom Composer installer for the Kirby CMS and for Kirby plugins",
             "homepage": "https://getkirby.com",
-            "time": "2019-02-11T20:27:36+00:00"
+            "support": {
+                "issues": "https://github.com/getkirby/composer-installer/issues",
+                "source": "https://github.com/getkirby/composer-installer/tree/1.2.1"
+            },
+            "funding": [
+                {
+                    "url": "https://getkirby.com/buy",
+                    "type": "custom"
+                }
+            ],
+            "time": "2020-12-28T12:54:39+00:00"
         },
         {
             "name": "robthree/twofactorauth",
-            "version": "1.7.0",
+            "version": "1.8.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/RobThree/TwoFactorAuth.git",
-                "reference": "37983bf675c5baca09d19d6705170489d0df0002"
+                "reference": "65681de5a324eae05140ac58b08648a60212afc0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RobThree/TwoFactorAuth/zipball/37983bf675c5baca09d19d6705170489d0df0002",
-                "reference": "37983bf675c5baca09d19d6705170489d0df0002",
+                "url": "https://api.github.com/repos/RobThree/TwoFactorAuth/zipball/65681de5a324eae05140ac58b08648a60212afc0",
+                "reference": "65681de5a324eae05140ac58b08648a60212afc0",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.6.0"
             },
             "require-dev": {
+                "php-parallel-lint/php-parallel-lint": "^1.2",
                 "phpunit/phpunit": "@stable"
+            },
+            "suggest": {
+                "bacon/bacon-qr-code": "Needed for BaconQrCodeProvider provider",
+                "endroid/qr-code": "Needed for EndroidQrCodeProvider"
             },
             "type": "library",
             "autoload": {
@@ -93,7 +107,21 @@
                 "php",
                 "tfa"
             ],
-            "time": "2020-01-02T19:56:46+00:00"
+            "support": {
+                "issues": "https://github.com/RobThree/TwoFactorAuth/issues",
+                "source": "https://github.com/RobThree/TwoFactorAuth"
+            },
+            "funding": [
+                {
+                    "url": "https://paypal.me/robiii",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/RobThree",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-03-22T16:11:07+00:00"
         }
     ],
     "packages-dev": [],
@@ -103,5 +131,6 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
 }
