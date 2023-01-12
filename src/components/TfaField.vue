@@ -5,16 +5,18 @@
       icon="lock"
       @click="getSecret"
       :disabled="isNotTheCurrentUserPage"
-      >Enable 2fa</k-button
     >
+      Enable 2fa
+    </k-button>
     <k-button
       v-else
       icon="unlock"
       theme="negative"
       @click="$refs.disableDialog.open()"
       :disabled="isNotTheCurrentUserPage"
-      >Disable 2fa</k-button
     >
+      Disable 2fa
+    </k-button>
     <k-dialog ref="enableDialog" size="medium">
       <template v-if="auth">
         <k-text class="mg-b-lg" size="large">
@@ -41,9 +43,9 @@
 
       <template slot="footer">
         <k-button-group>
-          <k-button icon="cancel" @click="$refs.enableDialog.close()"
-            >Cancel</k-button
-          >
+          <k-button icon="cancel" @click="$refs.enableDialog.close()">
+            Cancel
+          </k-button>
           <k-button
             v-if="auth"
             icon="check"
@@ -58,15 +60,14 @@
     </k-dialog>
 
     <k-dialog ref="disableDialog">
-      <k-text class="mg-b-md"
-        >Are you sure that you want to disable two factor
-        authentication?</k-text
-      >
+      <k-text class="mg-b-md">
+        Are you sure that you want to disable two factor authentication?
+      </k-text>
       <template slot="footer">
         <k-button-group>
-          <k-button icon="cancel" @click="$refs.disableDialog.close()"
-            >Cancel</k-button
-          >
+          <k-button icon="cancel" @click="$refs.disableDialog.close()">
+            Cancel
+          </k-button>
           <k-button icon="check" theme="negative" @click="disabletfa">
             Disable
             <template v-if="isLoading">…</template>
@@ -150,8 +151,8 @@ export default {
   computed: {
     isNotTheCurrentUserPage() {
       return (
-        this.$route.name === "User" &&
-        this.$route.params.id != this.$store.state.user.current.id
+        this.$view.path === "account" &&
+        this.$permissions.user.changePassword === false
       );
     },
     codeField() {
